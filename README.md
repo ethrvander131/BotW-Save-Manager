@@ -1,10 +1,11 @@
-# Breath of the Wild Save Manager
+# BOTW Save Sync for Switch and CEMU (Wii U)
 
-*This tool is useless if all you want to do is edit your save, the following link can directly edit Switch saves without any conversion: https://www.marcrobledo.com/savegame-editors/zelda-botw/*
+BOTW Save Sync is a work-in-progress version of DeltaJordan's [Breath of the Wild Save Manager](https://github.com/DeltaJordan/BotW-Save-Manager).
 
-**Note: Make sure both versions of BotW have the same update version**
+In it's current state, it can convert Switch <-> Wii U BotW <v1.5.0 save files.
+I hope to add functionality where you can connect your Switch to your PC via USB or Wi-Fi, specify your CEMU's mlc01 folder and automatically sync your save in the direction specified (CEMU -> Switch or Switch -> CEMU).
 
-BotW Save Manager is a fork of https://github.com/WemI0/BOTW_SaveConv that at the moment can convert Switch <-> Wii U BotW save files. It currently has been written with .Net Framework for Windows with UI, and .Net Core (command-line only) for cross-compatibility.
+Written with .Net Framework for Windows with UI, and .Net Core (command-line only) for cross-compatibility.
 
 ## Usage:
 
@@ -28,3 +29,9 @@ BotW Save Manager is a fork of https://github.com/WemI0/BOTW_SaveConv that at th
   * [.Net Framework 4.7](https://www.microsoft.com/en-us/download/details.aspx?id=55170)
 * Other
   * .Net Core - varies by system
+
+## Credits:
+
+* A fork of [Breath of the Wild Save Manager](https://github.com/DeltaJordan/BotW-Save-Manager) by DeltaJordan
+* Original command-line [save converter](https://github.com/WemI0/BOTW_SaveConv) by WemI0
+* Some code taken from [BOTW savegame-editor](https://github.com/marcrobledo/savegame-editors/tree/master/zelda-botw) by marcrobledo
