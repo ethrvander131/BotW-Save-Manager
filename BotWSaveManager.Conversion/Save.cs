@@ -26,20 +26,28 @@ namespace BotWSaveManager.Conversion
             897160,
             897112,
             907824,
+            907824,
+            916576,
+            1020648,
             1020648,
             1027208,
-            1027208
+            1027208,
+            1027216
         };
 
         private static List<int> headers = new List<int>
         {
             0x24e2,
-            0x24EE,
+            0x24ee,
             0x2588,
             0x29c0,
+            0x2a46,
+            0x2f8e,
             0x3ef8,
+            0x3ef9,
             0x471a,
-            0x471b
+            0x471b,
+            0x471e
         };
 
         private static List<string> versionList = new List<string>
@@ -48,9 +56,16 @@ namespace BotWSaveManager.Conversion
             "v1.1",
             "v1.2",
             "v1.3",
+            "v1.3.1",
+            "Kiosk",
             "v1.3.3",
+            "v1.3.4",
             "v1.4",
-            "v1.5"
+            "v1.5",
+            "v1.6",
+            "v1.6*",
+            "v1.6**",
+            "v1.6***"
         };
 
         private static List<string> items = new List<string>
@@ -122,20 +137,6 @@ namespace BotWSaveManager.Conversion
                     {
                         try
                         {
-                            if (BitConverter.ToInt16(br.ReadBytes(2), 0) == 0x2a46)
-                            {
-                                this.SaveVersionList.Add(versionList[headers.IndexOf(0x29c0)]); //v1.3.0 switch?
-                                return;
-                            }
-
-                            br.BaseStream.Position = 0;
-
-                            if (BitConverter.ToInt16(br.ReadBytes(2), 0) == 0x3ef9) 
-                            {
-                                this.SaveVersionList.Add(versionList[headers.IndexOf(0x3ef8)]); //v1.3.3 switch?
-                                return;
-                            }
-
                             br.BaseStream.Position = 0;
 
                             this.SaveVersionList.Add(versionList[headers.IndexOf(BitConverter.ToInt16(br.ReadBytes(2), 0))]);
